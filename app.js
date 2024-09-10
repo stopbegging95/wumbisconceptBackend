@@ -6,8 +6,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path")
 app.use(cors({
-  origin: 'http://localhost:3000',
-  //origin: ['wumbisdeployment.vercel.app',],
+  //origin: 'http://localhost:3000',
+  origin: ['wumbisdeployment.vercel.app',],
   methods: ["GET","POST","PUT","DELETE"], 
   credentials: true
 }));
