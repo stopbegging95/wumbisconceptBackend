@@ -40,7 +40,7 @@ router.post("/create-user", async (req, res, next) => {
     const activationToken = createActivationToken(user);
 
   //const activationUrl = `http://localhost:3000/activation/${activationToken}`;
-    const activationUrl = `wumbisdeployment.vercel.app/activation/${activationToken}`;
+    const activationUrl = `https://wumbisdeployment.vercel.app/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -148,8 +148,8 @@ router.post("/forgot-password", catchAsyncErrors(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetUrl = `http://localhost:3000/user-password-reset/${resetToken}`;
-  //const resetUrl = `wumbisdeployment.vercel.app/user-password-reset/${resetToken}`;
+  //const resetUrl = `http://localhost:3000/user-password-reset/${resetToken}`;
+  const resetUrl = `https://wumbisdeployment.vercel.app/user-password-reset/${resetToken}`;
 
   try {
     await sendMail({

@@ -40,8 +40,8 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
     };
 
     const activationToken = createActivationToken(seller);
-    //const activationUrl = `wumbisdeployment.vercel.app/seller/activation/${activationToken}`;
-    const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
+    const activationUrl = `https://wumbisdeployment.vercel.app/seller/activation/${activationToken}`;
+    //const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
 
 
     try {
@@ -156,8 +156,8 @@ router.post(
 
     await seller.save({ validateBeforeSave: false });
 
-    const resetUrl = `http://localhost:3000/shop-password-reset/${resetToken}`;
-    //const resetUrl = `wumbisdeployment.vercel.app/shop-password-reset/${resetToken}`;
+    //const resetUrl = `http://localhost:3000/shop-password-reset/${resetToken}`;
+    const resetUrl = `https://wumbisdeployment.vercel.app/shop-password-reset/${resetToken}`;
 
     const message = `Your password reset token is :- \n\n ${resetUrl} \n\n If you have not requested this email then, please ignore it.`;
 
