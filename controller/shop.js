@@ -40,9 +40,8 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
     };
 
     const activationToken = createActivationToken(seller);
-
-    // const activationUrl = `https://eshop-tutorial-pyri.vercel.app/seller/activation/${activationToken}`;
-    const activationUrl = `https://wumbisconcept.com/seller/activation/${activationToken}`;
+    const activationUrl = `wumbisdeployment.vercel.app/seller/activation/${activationToken}`;
+    //const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
 
 
     try {
@@ -158,7 +157,7 @@ router.post(
     await seller.save({ validateBeforeSave: false });
 
     //const resetUrl = `http://localhost:3000/shop-password-reset/${resetToken}`;
-    const resetUrl = `https://wumbisconcept.com/shop-password-reset/${resetToken}`;
+    const resetUrl = `wumbisdeployment.vercel.app/shop-password-reset/${resetToken}`;
 
     const message = `Your password reset token is :- \n\n ${resetUrl} \n\n If you have not requested this email then, please ignore it.`;
 
@@ -252,7 +251,7 @@ router.get(
       res.cookie("seller_token", null, {
         expires: new Date(Date.now()),
         httpOnly: true,
-        sameSite: "none",
+        sameSite: "Lax",
         secure: true,
       });
       res.status(201).json({

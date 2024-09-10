@@ -263,7 +263,6 @@ router.put(
   })
 );
 
-
 // get all products of a shop
 router.get(
   "/get-all-products-shop/:id",
