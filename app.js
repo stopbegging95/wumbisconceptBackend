@@ -8,7 +8,7 @@ const path = require("path")
 app.use(cors({
   //origin: 'http://localhost:3000',
   origin: ['https://wumbisdeployment.vercel.app/',],
-  // methods: ["GET","POST","PUT","DELETE"], 
+  methods: ["GET","POST","PUT","DELETE", "PATCH"], 
   credentials: true
 }));
 
