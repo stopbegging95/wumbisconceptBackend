@@ -7,7 +7,7 @@ const cors = require("cors");
 const path = require("path")
 
 app.use(cors({
-  origin: 'https://wumbisconcept.com/',
+  origin: 'https://wumbisconcept.com',
   methods: ["GET","POST","PUT","DELETE","PATCH"], 
   credentials: true
 }));
